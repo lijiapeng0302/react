@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+</head>
+
+<body>
+<!-- JSX即Javascript XML -->
+    <div id="react">
+    </div>
+    <script src="https://cdn.bootcss.com/react/15.6.1/react.js"></script>
+    <script src="https://cdn.bootcss.com/react/15.6.1/react-dom.js"></script>
+    <script src="http://cdn.bootcss.com/babel-core/5.8.38/browser.min.js"></script>
+    <script type="text/babel">
+    let names=[
+        <h1 key="1">1111</h1>,
+        <h2 key="2">2222</h2>
+    ];
+     //可以在数组中直接使用jsx语法
+    let HelloComponent=React.createClass({
+        render(){
+        return <div>
+                {
+                   names
+                }
+               </div>
+         //如果插入的是数组，则他会自动展开
+        }
+    })
+    ReactDOM.render(
+    //传递参数
+    <HelloComponent name="郑攀"></HelloComponent>,
+    document.getElementById("react")
+    )
+    </script>
+</body>
+
+</html>
